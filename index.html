@@ -1,84 +1,228 @@
-这份计划书旨在为您的一周后递交提供一个稳健的**第一版初稿**。考虑到您的业务具有跨国化、强合规（PIC/巴塞尔公约）以及高资金占用的特点，这份方案将 PMC 定义为律动未来的**“全球供应链控制塔（Global Supply Chain Control Tower）”**，而不仅仅是一个工厂的排产部门。
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>律动未来 PMC “全球供应链控制塔” 战略建设方案</title>
+    <!-- 引入 Tailwind CSS 框架 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入 Lucide 图标库 -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* 模拟 A4 纸张样式 */
+        .a4-page {
+            width: 100%;
+            max-width: 210mm; /* A4 标准宽度 */
+            margin: 0 auto;
+            background: white;
+            min-height: 297mm;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            padding: 40px;
+        }
+        /* 交互式模块动画 */
+        .module-content {
+            display: none;
+            opacity: 0;
+            transition: all 0.3s ease-in-out;
+        }
+        .module-card.active .module-content {
+            display: block;
+            opacity: 1;
+        }
+        .module-card.active {
+            border-color: #1e293b;
+            background-color: #f8fafc;
+            transform: translateY(-2px);
+        }
+        /* 打印优化 */
+        @media print {
+            body { background: white; padding: 0; }
+            .a4-page { box-shadow: none; margin: 0; max-width: none; width: 100%; }
+            .no-print { display: none; }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 min-h-screen py-10 px-4 flex flex-col items-center">
 
----
+    <!-- 主容器：模拟纸张 -->
+    <div class="a4-page flex flex-col">
+        
+        <!-- 页眉 -->
+        <header class="border-b-4 border-slate-900 pb-8 mb-10 flex justify-between items-end">
+            <div class="space-y-2">
+                <div class="flex items-center gap-3">
+                    <div class="bg-slate-900 p-2 rounded shadow-lg">
+                        <i data-lucide="globe" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h1 class="text-4xl font-black text-slate-900 tracking-tighter">GLOBAL PMC PLAN</h1>
+                </div>
+                <h2 class="text-xl font-bold text-slate-600 uppercase tracking-widest pl-1">律动未来全球供应链控制塔</h2>
+            </div>
+            <div class="text-right border-l-2 border-slate-200 pl-6 h-full flex flex-col justify-end text-xs text-slate-400">
+                <p class="font-mono">DOC ID: SZLD-PMC-2026-001</p>
+                <p>CONFIDENTIAL / 内部机密</p>
+                <p>DATE: 2026.04.28</p>
+            </div>
+        </header>
 
-# 律动未来：全球 PMC（生产与物料控制）战略建设方案
+        <!-- 导语 -->
+        <section class="mb-12 bg-slate-900 text-white p-6 rounded-lg shadow-inner">
+            <h3 class="text-lg font-bold mb-2 flex items-center gap-2">
+                <i data-lucide="zap" class="w-5 h-5 text-yellow-400"></i> 战略愿景
+            </h3>
+            <p class="text-slate-300 leading-relaxed text-sm">
+                本方案旨在将 PMC 从传统的“排产”职能升级为律动未来的<span class="text-white font-bold underline decoration-yellow-400">“全球指挥中枢”</span>。
+                通过集成母公司 ERP 数据与 AI 预警算法，彻底消除销售、物流与工厂间的信息差，确保在 30 亿营收量级下的合规性与资金周转效率。
+            </p>
+        </section>
 
-**呈报人：** [您的姓名]  
-**呈报日期：** 2026年4月28日  
-**目标对象：** 总经理 Charles、副总经理 林睿
+        <!-- 核心四大支柱 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            
+            <!-- 模块 1 -->
+            <div class="module-card border-2 border-slate-100 p-8 rounded-2xl transition-all cursor-pointer hover:shadow-xl group" onclick="toggleModule(this)">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="p-4 bg-blue-50 text-blue-600 rounded-xl group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <i data-lucide="shield-check" class="w-6 h-6"></i>
+                    </div>
+                    <span class="text-[10px] font-bold text-slate-300 tracking-widest uppercase">Pillar 01</span>
+                </div>
+                <h4 class="text-xl font-bold text-slate-900 mb-2">建设必要性</h4>
+                <p class="text-slate-500 text-sm mb-4">破解规模增长的管理瓶颈</p>
+                <div class="module-content space-y-4 pt-4 border-t border-slate-100">
+                    <div class="flex gap-3">
+                        <i data-lucide="info" class="w-4 h-4 text-blue-500 mt-1 shrink-0"></i>
+                        <p class="text-xs text-slate-600 leading-relaxed">目前销售与物流依赖 Excel 手动同步，延迟达 48 小时以上，存在极大的“停工待料”风险。</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <i data-lucide="alert-triangle" class="w-4 h-4 text-orange-500 mt-1 shrink-0"></i>
+                        <p class="text-xs text-slate-600 leading-relaxed">黑粉跨境涉及 PIC 申报，周期长达 3 个月，必须由 PMC 提前 120 天启动计划锁定。</p>
+                    </div>
+                </div>
+            </div>
 
----
+            <!-- 模块 2 -->
+            <div class="module-card border-2 border-slate-100 p-8 rounded-2xl transition-all cursor-pointer hover:shadow-xl group" onclick="toggleModule(this)">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="p-4 bg-green-50 text-green-600 rounded-xl group-hover:bg-green-600 group-hover:text-white transition-colors">
+                        <i data-lucide="users" class="w-6 h-6"></i>
+                    </div>
+                    <span class="text-[10px] font-bold text-slate-300 tracking-widest uppercase">Pillar 02</span>
+                </div>
+                <h4 class="text-xl font-bold text-slate-900 mb-2">1+2+X 组织架构</h4>
+                <p class="text-slate-500 text-sm mb-4">精英化“中枢大脑”团队</p>
+                <div class="module-content space-y-4 pt-4 border-t border-slate-100">
+                    <div class="flex gap-3">
+                        <i data-lucide="user-check" class="w-4 h-4 text-green-600 mt-1 shrink-0"></i>
+                        <p class="text-xs text-slate-600 leading-relaxed"><span class="font-bold">负责人</span>：主导全球资源调配，直接向总经理 Charles 汇报核心风险。</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <i data-lucide="user-plus" class="w-4 h-4 text-green-600 mt-1 shrink-0"></i>
+                        <p class="text-xs text-slate-600 leading-relaxed"><span class="font-bold">核心专员</span>：设需求计划（Planner）与物流合规（Compliance）两个刚性编制。</p>
+                    </div>
+                </div>
+            </div>
 
-## 一、 为什么要建立 PMC？（必要性与背景）
+            <!-- 模块 3 -->
+            <div class="module-card border-2 border-slate-100 p-8 rounded-2xl transition-all cursor-pointer hover:shadow-xl group" onclick="toggleModule(this)">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="p-4 bg-purple-50 text-purple-600 rounded-xl group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                        <i data-lucide="repeat" class="w-6 h-6"></i>
+                    </div>
+                    <span class="text-[10px] font-bold text-slate-300 tracking-widest uppercase">Pillar 03</span>
+                </div>
+                <h4 class="text-xl font-bold text-slate-900 mb-2">全链路流程闭环</h4>
+                <p class="text-slate-500 text-sm mb-4">从需求到交付的精细管控</p>
+                <div class="module-content space-y-4 pt-4 border-t border-slate-100">
+                    <div class="flex gap-3">
+                        <i data-lucide="anchor" class="w-4 h-4 text-purple-600 mt-1 shrink-0"></i>
+                        <p class="text-xs text-slate-600 leading-relaxed"><span class="font-bold">在途可视化</span>：利用 AI 追踪公海货权状态，实时更新财务库存价值。</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <i data-lucide="file-text" class="w-4 h-4 text-purple-600 mt-1 shrink-0"></i>
+                        <p class="text-xs text-slate-600 leading-relaxed"><span class="font-bold">合规前置</span>：PIC 申报作为采购指令的“硬触发器”，无证不发运，零违约。</p>
+                    </div>
+                </div>
+            </div>
 
-随着公司业务从“点对点贸易”向“全球化网络”转型（涉及匈牙利、日韩、泰国、柬埔寨及中国港口），传统的 Excel 管理模式已触及物理极限。
+            <!-- 模块 4 -->
+            <div class="module-card border-2 border-slate-100 p-8 rounded-2xl transition-all cursor-pointer hover:shadow-xl group" onclick="toggleModule(this)">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="p-4 bg-orange-50 text-orange-600 rounded-xl group-hover:bg-orange-600 group-hover:text-white transition-colors">
+                        <i data-lucide="monitor" class="w-6 h-6"></i>
+                    </div>
+                    <span class="text-[10px] font-bold text-slate-300 tracking-widest uppercase">Pillar 04</span>
+                </div>
+                <h4 class="text-xl font-bold text-slate-900 mb-2">数字化控制塔</h4>
+                <p class="text-slate-500 text-sm mb-4">技术赋能管理决策</p>
+                <div class="module-content space-y-4 pt-4 border-t border-slate-100">
+                    <div class="flex gap-3">
+                        <i data-lucide="database" class="w-4 h-4 text-orange-600 mt-1 shrink-0"></i>
+                        <p class="text-xs text-slate-600 leading-relaxed"><span class="font-bold">ERP 集成</span>：深度对接母公司锦源晟 ERP，开通律动独立数据接口。</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <i data-lucide="bell" class="w-4 h-4 text-orange-600 mt-1 shrink-0"></i>
+                        <p class="text-xs text-slate-600 leading-relaxed"><span class="font-bold">AI 红灯</span>：自动识别船期延误风险，提前 15 天推送 PIC 过期预警。</p>
+                    </div>
+                </div>
+            </div>
 
-1.  **消除信息孤岛：** 目前销售、采购、物流部门信息滞后，导致“停工待料”或“资金过度占用”风险。
-2.  **应对极长交期（Lead Time）：** PIC 申报（2-3月）+ 海运（1-2月）意味着必须建立**提前 6 个月的确定性计划**。
-3.  **合规生命线：** 黑粉作为“琥珀色清单”物资，任何计划偏差导致的滞期都将面临巨额罚金或资质吊销。
-4.  **支撑营收规模：** 在公司向 10-30 亿营收挺进的过程中，PMC 是防止供应链崩盘的“大脑中枢”。
+        </div>
 
----
+        <!-- 底部 KPI -->
+        <section class="mt-auto pt-10 border-t-2 border-slate-100">
+            <h3 class="text-sm font-black text-slate-900 uppercase tracking-[0.3em] mb-6 flex items-center gap-2">
+                <i data-lucide="trending-up" class="w-4 h-4"></i> Expected Value & KPI
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-slate-50 p-6 rounded-xl">
+                    <p class="text-xs font-bold text-slate-400 mb-2">风险控制</p>
+                    <p class="text-2xl font-black text-slate-900">0 ERROR</p>
+                    <p class="text-[10px] text-slate-500 mt-2">100% 规避合规性退运风险</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-xl">
+                    <p class="text-xs font-bold text-slate-400 mb-2">资金周转</p>
+                    <p class="text-2xl font-black text-slate-900">+15.5%</p>
+                    <p class="text-[10px] text-slate-500 mt-2">减少在途物资资金沉淀时长</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-xl">
+                    <p class="text-xs font-bold text-slate-400 mb-2">部门协同</p>
+                    <p class="text-2xl font-black text-slate-900">&lt; 12 HR</p>
+                    <p class="text-[10px] text-slate-500 mt-2">全球库存数据更新同步时效</p>
+                </div>
+            </div>
+        </section>
 
-## 二、 PMC 的职能定位：全球控制塔
+        <!-- 页脚 -->
+        <footer class="mt-12 text-[10px] text-slate-400 text-center tracking-widest uppercase">
+            Shenzhen Jayson Green Future Material Co., Ltd. - Confidential Document
+        </footer>
+    </div>
 
-PMC 部门将由 **PC（生产控制）** 与 **MC（物料控制）** 两大职能模块构成，并深度整合**国际物流与合规**。
+    <!-- 底部互动提示 -->
+    <div class="fixed bottom-6 bg-slate-900 text-white px-6 py-3 rounded-full text-xs shadow-2xl flex items-center gap-3 no-print hover:scale-105 transition-transform">
+        <i data-lucide="mouse-pointer-2" class="w-4 h-4 animate-bounce text-yellow-400"></i>
+        <span>点击上方模块卡片可扩展查看下一步详细执行逻辑</span>
+    </div>
 
-### 1. MC（物料控制）：解决“有料可用、资金安全”
-* **虚拟 HUB 管理：** 监控全球所有仓库（欧洲仓、日韩厂、中国港口仓）及“公海在途”物料的状态。
-* **滚动预测（Rolling Forecast）：** 基于销售目标，输出 6 个月的物料需求，触发采购与 PIC 申报流程。
-* **库存周转监控：** 实时监控高价值黑粉的在途时长，优化现金流，减少资金在海上的无效沉淀。
+    <script>
+        // 初始化图标
+        lucide.createIcons();
 
-### 2. PC（生产控制）：解决“全球协同、准时交付”
-* **多基地调度：** 作为深圳总部中枢，指挥韩国（3000吨产能）、泰国、柬埔寨各厂的生产优先级。
-* **交期承诺（ATP）：** 给予销售部准确的交货计划，提升 LG、SK 等大厂客户的信任度。
-
----
-
-## 三、 组织架构搭建（“1+2+X” 模式）
-
-由于深圳总部规模精干，PMC 团队采取**“轻总部、强协同”**的架构：
-
-| 岗位 | 编制 | 核心职责 |
-| :--- | :--- | :--- |
-| **PMC 负责人** | 1名（您） | 顶层策略决策、跨部门协调、资金/合规风险终审。 |
-| **需求与计划专员 (Planner)** | 1名（核心） | 对接销售与生产基地。计算：匈牙利出多少货，泰国厂何时开工，中国买家何时提货。 |
-| **全球物流与合规专员** | 1名（核心） | 死磕 PIC 申报细节、海运订舱、单证一致性审查。 |
-| **基地协同员 (Local PC)** | X名（海外/国内厂） | 向总部 PMC 汇报本地日报、库存实物与生产动态（非总部编制）。 |
-
----
-
-## 四、 如何运作？（核心业务闭环）
-
-1.  **需求计划：** 销售部提供季度/月度订单预估 $\rightarrow$ PMC 转化为物料需求。
-2.  **前置合规：** PMC 提前 120 天启动巴塞尔公约 PIC 申请。
-3.  **在途监控：** 物料离开匈牙利厂后进入“虚拟控制塔”，AI 系统根据船期预测到港时间。
-4.  **动态排产：** 泰国/韩国工厂根据物料到港预报，自动调整未来 15 天的生产班次。
-5.  **成品交付：** 针对国内买家工厂交货，PMC 提前设计港口监管仓的“预清关”方案。
-
----
-
-## 五、 数字化系统建设路径
-
-**策略：借力母公司 ERP + 顶层 AI 决策看板。**
-
-* **第一步（数据层）：** 开通母公司锦源晟 ERP 的律动独立账套，规范采购、销售、财务单据。
-* **第二步（看板层）：** 利用 Python/API 抓取海运物流轨迹与 PIC 节点，建立**“全球库存一张表”**。
-* **第三步（智能层 - 您的兴趣点）：**
-    * **红灯预警：** 当黑粉预计到港时间超过 PIC 许可期时，系统自动推送到移动端。
-    * **库存看板：** 销售点击即可看到全球各 HUB 的实时剩余量。
-
----
-
-## 六、 预期收益（好处与 Impact）
-
-1.  **风险全覆盖：** 100% 规避因计划不周导致的 PIC 失效或海关退运风险。
-2.  **响应提速：** 内部信息传递延迟从现在的“天”级缩短至“小时”级。
-3.  **资金优化：** 通过精准物料衔接，预期可将全球供应链的资金占用周期缩短 15-20%。
-4.  **建立品牌：** 给 LG、SK 等巨头展示律动具备“控制塔”级别的专业供应链管控能力。
-
----
-
-### **后续讨论建议：**
-您可以根据这份初稿，决定是否需要我为您补充**具体岗位的 JD（职位描述）**，或者**系统采购的资金预估表**。此外，向 Charles 确认母公司 ERP 的接口权限将是下一步推进的关键。
+        // 模块卡片切换逻辑
+        function toggleModule(element) {
+            // 如果点击的是已经激活的，则关闭
+            if (element.classList.contains('active')) {
+                element.classList.remove('active');
+            } else {
+                // 先关闭所有
+                document.querySelectorAll('.module-card').forEach(card => {
+                    card.classList.remove('active');
+                });
+                // 激活当前
+                element.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
